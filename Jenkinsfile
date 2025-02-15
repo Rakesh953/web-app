@@ -16,15 +16,13 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                sh 'docker build -t tomimg .'
+                sh 'docker build -t tomimg1 .'
             }
         }
 
         stage('Deploy') {
             steps {
-                sh 'docker stop tomcat-container || true'
-                sh 'docker rm tomcat-container || true'
-                sh 'docker run -d -p 8081:8080 --name tomcat-container tomimg'
+                sh 'docker run -itd -p 8082:8080 --name tomcat-container2 tomimg1'
             }
         }
     }
