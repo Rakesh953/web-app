@@ -20,7 +20,7 @@ pipeline {
             steps {
                 sh 'docker stop tomcat-container || true'
                 sh 'docker rm tomcat-container || true'
-                sh 'docker run -d -p 8081:8080 --name tomcat-container tomcatting3'
+                sh 'docker run -d -p 8081:8080 --name tomcat-container tomcatimg3'
             }
         }
     }
